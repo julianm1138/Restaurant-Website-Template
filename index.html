@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Restaurant Name</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+  
+</head>
+<body>
+  <header>
+      <nav>
+          <div class="menu-toggle" id="menu-toggle">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+          </div>
+          <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <div class="section">
+   <div class="fade-out-container">
+        <div class="hero">
+            <h1>Welcome to Your Restaurant</h1>
+            <p>Delicious Food in a Cozy Atmosphere</p>
+        </div>
+   </div>
+  </div>
+
+    <div class="section">
+  <div class="fade-out-container">
+        <div class="menu-item">
+            <h2>Menu Item 1</h2>
+            <p>Description of the menu item.</p>
+            <span>$12.99</span>
+        </div>
+    </div>
+    </div>
+
+
+      <div class="section">
+    <div class="fade-out-container">
+    <div class="about">
+        <h2>About Us</h2>
+        <p>Learn about the history of our restaurant and our commitment to serving high-quality food.</p>
+    </div>
+    </div>
+      </div>
+
+        <div class="section">
+  <div class="fade-out-container">
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to make a reservation, please contact us.</p>
+    </div>
+  </div>
+        </div>
+  
+
+
+  <footer>
+    <div class="footer-container">
+      <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="copyright-container">
+      <p>&copy; 2023 Your Restaurant Name</p>
+    </div>
+  </footer>
+
+
+  
+
+  <script>
+    //hamburger menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.querySelector('ul');
+
+    menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+//fade out animation on scroll
+    const containers = document.querySelectorAll('.fade-out-container');
+
+    const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.6, // Trigger when at least 50% of the container is out of view
+    };
+
+    const handleIntersect = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Add a CSS class to control the fade-out effect
+                entry.target.classList.remove('fade-out');
+            } else {
+                entry.target.classList.add('fade-out');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, options);
+
+    containers.forEach((container) => {
+        observer.observe(container);
+    });
+
+
+  
+
+
+    
+    
+  </script>
+
+  
+</body>
+</html>

@@ -1,0 +1,320 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  
+}
+
+html {
+  background-image: url('https://i.imgur.com/o7PfCKM.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+   
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Header styles */
+header {
+    background-color: #000000;
+    color: #fff;
+  
+}
+
+nav li {
+    margin: 0 20px;
+  
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+  font-size: 25px;
+  
+  
+  
+}
+
+nav a:hover {
+  color: #666666; 
+ 
+}
+
+
+/* Hero section styles */
+.hero {
+    text-align: center;
+    padding: 100px;
+  color: #ffffff;
+  margin-left: 10px;
+  margin-top: 200px;
+  margin-bottom: 300px;
+  
+}
+
+
+/* Footer styles */
+footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.footer-container i {
+
+  color: white; 
+  margin: 0 10px 20px 0;
+  transition: color 0.7s;
+}
+
+.footer-container i:hover {
+
+  color: #4a4a4a; 
+
+  
+}
+
+
+/*Sections*/ 
+
+.menu-item {
+  margin-top: 200px;
+  margin-bottom: 500px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 90px;
+  width: 100%;
+  
+}
+
+.about {
+
+  text-align: center;
+  border: 1px solid #ddd;
+  
+  padding: 90px;
+  margin-bottom: 500px
+  
+}
+
+.contact {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 90px;
+  margin-bottom: 500px
+  
+}
+
+
+
+
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+    cursor: pointer;
+    transition: transform 0.3s; 
+}
+
+
+.bar {
+    width: 30px;
+    height: 2px;
+    background-color: #575757;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+nav a {
+    font-size: 25px;
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  
+}
+
+.menu-toggle:hover {
+    color: gray;
+  
+
+}
+
+nav ul {
+  display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    color: white;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin-left: 4px;
+    width: 20%;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+  list-style: none;
+}
+
+ul {
+    transition: opacity 0.3s;
+    opacity: 0; /* Start with opacity set to 0 */
+}
+
+ul.active {
+  
+    opacity: 1; /* Make the menu items fully visible when active */
+}
+
+
+
+
+nav li {
+    margin: 10px 0; /* Add margin to separate list items vertically */
+}
+
+
+/*scroll animation*/
+
+
+.fade-out-container {
+   
+    height: 100vh; /* Adjust the height as needed */
+    transition: opacity 1s; /* Add a smooth transition for the fade-out effect */
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s; /* Add a smooth transition for the fade-out effect */
+}
+
+
+/*snap scroll*/
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scroll-snap-type: y mandatory; /* Snap only on the y-axis */
+}
+.section {
+  height: 100vh; /* Full viewport height for each section */
+  scroll-snap-align: start; /* Snap at the start of each section */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Query for smaller screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        color: #ffffff;
+        position: absolute;
+        top: 50px;
+        left: -120px;
+        margin-left: 4px;
+        width: 70%;
+        text-align: center;
+        margin-top: 10px;
+      transition: opacity 0.3s;
+      opacity: 0; /* Start with opacity set to 0 */
+    }
+
+
+
+  ul.active {
+     
+        opacity: 1;
+    }
+
+    /* Adjust the font size for menu items on smaller screens (18px) */
+    nav a {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+  .menu-item {
+    margin-top: 200px;
+    margin-bottom: 500px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 40px;
+    width: 100%;
+
+  }
+
+  .about {
+
+    text-align: center;
+    border: 1px solid #ddd;
+
+    padding: 40px;
+    margin-bottom: 500px
+
+  }
+
+  .contact {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 40px;
+    margin-bottom: 500px
+
+  }
+}
+
